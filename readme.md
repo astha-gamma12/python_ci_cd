@@ -30,3 +30,54 @@ This downloads your code from the GitHub repository so the runner can work with 
 
 
 CI is used to automatically test your code whenever changes are pushed to the repository.
+
+
+
+name: python-app-ci-cd
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: |
+          pytest
+
+
+
+
+_______________________________
+
+name: python-app-ci-cd
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: |
+          pytest
